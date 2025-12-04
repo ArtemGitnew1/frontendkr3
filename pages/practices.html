@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Практики - Портфолио</title>
+    <meta name="description" content="Практические работы: выполненные задания и проекты по веб‑разработке. Семантика, адаптив, формы, изображения.">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="practices.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Перейти к основному содержимому</a>
+
+<header class="header" role="banner">
+    <div class="container">
+        <div class="header-content">
+            <div>
+                <h1 class="header-title">Практические работы</h1>
+                <p class="header-subtitle">Выполненные задания и проекты</p>
+            </div>
+            <span class="badge">ЭФБО-03-24</span>
+        </div>
+    </div>
+</header>
+
+<nav class="nav" aria-label="Основная навигация">
+    <div class="container">
+        <ul class="nav-list" role="list">
+            <li><a href="../index.html" class="nav-link">🏠 Главная</a></li>
+            <li><a href="news.html" class="nav-link">📰 Новости</a></li>
+            <li><a href="practices.html" class="nav-link active" aria-current="page">💻 Практики</a></li>
+            <li><a href="goods.html" class="nav-link">🛒 Товары</a></li>
+            <li><a href="contacts.html" class="nav-link">📞 Контакты</a></li>
+            <li><a href="realti.html" class="nav-link">🏢 Недвижимость</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main id="main" class="main" role="main">
+    <div class="container">
+        <section class="section" aria-labelledby="practices-title">
+            <div class="card">
+                <div class="card-header">
+                    <h2 id="practices-title" class="card-title">📚 Мои практические работы</h2>
+                </div>
+                <div class="card-body">
+                    <p class="lead">Здесь отображаются выполненные практические задания и учебные проекты. В процессе обучения я выполняю различные работы по веб‑разработке, которые демонстрируют мои навыки и прогресс.</p>
+
+                    <!-- Сетка практик (Grid) -->
+                    <div class="practices-grid" role="list">
+                        <!-- Практика 1 -->
+                        <article class="practice-card" aria-labelledby="practice1-title" role="listitem">
+                            <div class="practice-icon" aria-hidden="true">🛠️</div>
+                            <h3 id="practice1-title" class="practice-title">Практическая работа 1</h3>
+                            <p class="practice-description">Основы HTML и CSS. Создание семантической разметки.</p>
+                            <div class="practice-tags">
+                                <span class="tag tag-html">HTML</span>
+                                <span class="tag tag-css">CSS</span>
+                            </div>
+                            <a href="#practice1" class="btn btn-outline">Посмотреть</a>
+                        </article>
+
+                        <!-- Практика 2 -->
+                        <article class="practice-card" aria-labelledby="practice2-title" role="listitem">
+                            <div class="practice-icon" aria-hidden="true">📱</div>
+                            <h3 id="practice2-title" class="practice-title">Практическая работа 2</h3>
+                            <p class="practice-description">Работа с Bootstrap.</p>
+                            <div class="practice-tags">
+                                <span class="tag tag-responsive">Bootstrap</span>
+                            </div>
+                            <a href="#practice2" class="btn btn-outline">Посмотреть</a>
+                        </article>
+
+                        <!-- Практика 3 -->
+                        <article class="practice-card" aria-labelledby="practice3-title" role="listitem">
+                            <div class="practice-icon" aria-hidden="true">⚡</div>
+                            <h3 id="practice3-title" class="practice-title">Практическая работа 3</h3>
+                            <p class="practice-description">Адаптивная верстка.</p>
+                            <div class="practice-tags">
+                                <span class="tag tag-js">Flex</span>
+                                <span class="tag tag-dom">Grid</span>
+                            </div>
+                            <a href="#practice3" class="btn btn-outline">Посмотреть</a>
+                        </article>
+
+                        <!-- Практика 4 -->
+                        <article class="practice-card" aria-labelledby="practice4-title" role="listitem">
+                            <div class="practice-icon" aria-hidden="true">📝</div>
+                            <h3 id="practice4-title" class="practice-title">Практическая работа 4</h3>
+                            <p class="practice-description">Работа на React.</p>
+                            <div class="practice-tags">
+                                <span class="tag tag-forms">React</span>
+                            </div>
+                            <a href="#practice4" class="btn btn-outline">Посмотреть</a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer class="footer" role="contentinfo">
+    <div class="container">
+        <div class="footer-content">
+            <p class="footer-text">&copy; 2025 Портфолио студента. Все права защищены.</p>
+            <div class="footer-links">
+                <a href="contacts.html" class="footer-link">Контакты</a>
+                <a href="#" class="footer-link">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

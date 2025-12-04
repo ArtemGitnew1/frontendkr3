@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Товары - Портфолио</title>
+    <meta name="description" content="Каталог товаров: адаптивная сетка, доступные карточки, современное оформление без Bootstrap.">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="goods.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Перейти к основному содержимому</a>
+
+<header class="header" role="banner">
+    <div class="container">
+        <div class="header-content">
+            <div>
+                <h1 class="header-title">Наши товары</h1>
+                <p class="header-subtitle">Качественная продукция</p>
+            </div>
+            <span class="badge">ЭФБО-03-24</span>
+        </div>
+    </div>
+</header>
+
+<nav class="nav" aria-label="Основная навигация">
+    <div class="container">
+        <ul class="nav-list" role="list">
+            <li><a href="../index.html" class="nav-link">🏠 Главная</a></li>
+            <li><a href="news.html" class="nav-link">📰 Новости</a></li>
+            <li><a href="practices.html" class="nav-link">💻 Практики</a></li>
+            <li><a href="goods.html" class="nav-link active" aria-current="page">🛒 Товары</a></li>
+            <li><a href="contacts.html" class="nav-link">📞 Контакты</a></li>
+            <li><a href="realti.html" class="nav-link">🏢 Недвижимость</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main id="main" class="main" role="main">
+    <div class="container">
+        <section class="section" aria-labelledby="goods-title">
+            <div class="card">
+                <div class="card-header">
+                    <h2 id="goods-title" class="card-title">📦 Каталог товаров</h2>
+                </div>
+                <div class="card-body">
+                    <!-- Сетка товаров (Grid) -->
+                    <div class="goods-grid" role="list">
+                        <!-- Товар 1 -->
+                        <article class="goods-card" aria-labelledby="goods1-title" role="listitem">
+                            <div class="goods-image-container">
+                                <picture>
+                                    <source srcset="../images/goods1.webp" type="image/webp">
+                                    <img src="../images/goods1.jpg"
+                                         alt="Товар 1 — Высококачественный продукт"
+                                         class="goods-image"
+                                         width="640" height="360"
+                                         loading="lazy">
+                                </picture>
+                            </div>
+                            <div class="goods-content">
+                                <h3 id="goods1-title" class="goods-name">Товар 1</h3>
+                                <p class="goods-description">Высококачественный продукт с отличными характеристиками.</p>
+                                <div class="goods-footer">
+                                    <span class="goods-price" aria-label="Цена товара 1">1500 руб.</span>
+                                    <button class="btn btn-primary" type="button" aria-label="Добавить Товар 1 в корзину">🛒 В корзину</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Товар 2 -->
+                        <article class="goods-card" aria-labelledby="goods2-title" role="listitem">
+                            <div class="goods-image-container">
+                                <picture>
+                                    <source srcset="../images/goods2.webp" type="image/webp">
+                                    <img src="../images/goods2.jpg"
+                                         alt="Товар 2 — Современное решение"
+                                         class="goods-image"
+                                         width="640" height="360"
+                                         loading="lazy">
+                                </picture>
+                            </div>
+                            <div class="goods-content">
+                                <h3 id="goods2-title" class="goods-name">Товар 2</h3>
+                                <p class="goods-description">Современное решение для ваших потребностей.</p>
+                                <div class="goods-footer">
+                                    <span class="goods-price" aria-label="Цена товара 2">2500 руб.</span>
+                                    <button class="btn btn-primary" type="button" aria-label="Добавить Товар 2 в корзину">🛒 В корзину</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Товар 3 -->
+                        <article class="goods-card" aria-labelledby="goods3-title" role="listitem">
+                            <div class="goods-image-container">
+                                <picture>
+                                    <source srcset="../images/goods3.webp" type="image/webp">
+                                    <img src="../images/goods3.jpg"
+                                         alt="Товар 3 — Премиум качество"
+                                         class="goods-image"
+                                         width="640" height="360"
+                                         loading="lazy">
+                                </picture>
+                            </div>
+                            <div class="goods-content">
+                                <h3 id="goods3-title" class="goods-name">Товар 3</h3>
+                                <p class="goods-description">Премиум качество по доступной цене.</p>
+                                <div class="goods-footer">
+                                    <span class="goods-price" aria-label="Цена товара 3">3500 руб.</span>
+                                    <button class="btn btn-primary" type="button" aria-label="Добавить Товар 3 в корзину">🛒 В корзину</button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Инфо-блок (Flex) -->
+                    <aside class="goods-info" aria-label="Информация о заказе">
+                        <div class="info-item">
+                            <span class="info-icon" aria-hidden="true">🚚</span>
+                            <div>
+                                <strong>Быстрая доставка</strong>
+                                <p class="info-text">Отправка по всей России в течение 1–3 дней.</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon" aria-hidden="true">🔒</span>
+                            <div>
+                                <strong>Безопасная оплата</strong>
+                                <p class="info-text">Поддержка банковских карт и онлайн‑кошельков.</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon" aria-hidden="true">💬</span>
+                            <div>
+                                <strong>Поддержка 24/7</strong>
+                                <p class="info-text">Отвечаем на вопросы круглосуточно.</p>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer class="footer" role="contentinfo">
+    <div class="container">
+        <div class="footer-content">
+            <p class="footer-text">&copy; 2025 Портфолио студента. Все права защищены.</p>
+            <div class="footer-links">
+                <a href="contacts.html" class="footer-link">Контакты</a>
+                <a href="#" class="footer-link">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

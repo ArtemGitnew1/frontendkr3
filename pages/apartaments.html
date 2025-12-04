@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Подбор квартир - Недвижимость</title>
+    <link rel="stylesheet" href="apartaments.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Перейти к основному содержимому</a>
+
+<header class="header">
+    <div class="container">
+        <div class="header-inner">
+            <div class="header-text">
+                <h1>Подбор квартир</h1>
+                <p>ЖК «ЯПарк» — доступные варианты</p>
+            </div>
+            <div class="header-badge">
+                <span class="badge">ЭФБО-03-24</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<nav class="nav" aria-label="Основная навигация">
+    <div class="container">
+        <div class="nav-inner">
+            <ul class="nav-menu" role="list">
+                <li><a href="../index.html">🏠 <span class="nav-text">Главная</span></a></li>
+                <li><a href="news.html">📰 <span class="nav-text">Новости</span></a></li>
+                <li><a href="practices.html">💻 <span class="nav-text">Практики</span></a></li>
+                <li><a href="goods.html">🛒 <span class="nav-text">Товары</span></a></li>
+                <li><a href="contacts.html">📞 <span class="nav-text">Контакты</span></a></li>
+                <li><a href="realti.html">🏢 <span class="nav-text">Недвижимость</span></a></li>
+                <li><a href="apartaments.html" aria-current="page" class="active">🔍 <span class="nav-text">Подбор квартир</span></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main id="main" class="main" tabindex="-1">
+    <div class="container">
+
+        <div class="filters">
+            <button class="filter-btn"
+                    id="filterToggle"
+                    aria-controls="filterContent"
+                    aria-expanded="false"
+                    type="button">
+                🔽 Показать фильтры
+            </button>
+
+            <div class="filter-content"
+                 id="filterContent"
+                 role="region"
+                 aria-labelledby="filterLegend">
+                <h2 id="filterLegend" class="visually-hidden">Фильтры выбора квартиры</h2>
+                <div class="filter-grid">
+                    <div class="filter-group">
+                        <label for="rooms">Комнаты</label>
+                        <select id="rooms" name="rooms">
+                            <option value="">Любое</option>
+                            <option value="1">1 комната</option>
+                            <option value="2">2 комнаты</option>
+                            <option value="3">3 комнаты</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="area">Площадь</label>
+                        <select id="area" name="area">
+                            <option value="">Любая</option>
+                            <option value="0-40">до 40 м²</option>
+                            <option value="40-60">40–60 м²</option>
+                            <option value="60-80">60–80 м²</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="floor">Этаж</label>
+                        <select id="floor" name="floor">
+                            <option value="">Любой</option>
+                            <option value="1-5">1–5 этаж</option>
+                            <option value="6-10">6–10 этаж</option>
+                            <option value="11-15">11–15 этаж</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="price">Стоимость</label>
+                        <select id="price" name="price">
+                            <option value="">Любая</option>
+                            <option value="0-10">до 10 млн ₽</option>
+                            <option value="10-15">10–15 млн ₽</option>
+                            <option value="15-20">15–20 млн ₽</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter-actions">
+                    <button class="btn btn-secondary" type="reset">🔄 Сбросить</button>
+                    <button class="btn btn-primary" type="button">🔍 Применить</button>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Доступные квартиры</h2>
+
+        <div class="apartments-grid" role="list">
+            <article class="card" role="listitem">
+                <div class="card-image">
+                    <img src="../images/kvartira1.png"
+                         width="320" height="220"
+                         alt="1-комнатная квартира, 32.2 м², 20 из 24 этаж" loading="lazy">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">1-комнатная</h3>
+                    <ul class="card-details" role="list">
+                        <li class="detail-item">📏 32.2 м²</li>
+                        <li class="detail-item">🏢 20/24 этаж</li>
+                        <li class="detail-item" aria-label="Европланировка">🏠 евро</li>
+                    </ul>
+                    <p class="card-price" aria-label="Цена: 8 571 640 рублей">8 571 640 ₽</p>
+                    <button class="btn btn-outline" type="button" aria-label="Подробнее: 1-комнатная, 32.2 м², 20 этаж">Подробнее</button>
+                </div>
+            </article>
+
+            <article class="card" role="listitem">
+                <div class="card-image">
+                    <img src="../images/kvartira2.png"
+                         width="320" height="220"
+                         alt="2-комнатная квартира, 56 м², 12 из 25 этаж" loading="lazy">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">2-комнатная</h3>
+                    <ul class="card-details" role="list">
+                        <li class="detail-item">📏 56 м²</li>
+                        <li class="detail-item">🏢 12/25 этаж</li>
+                        <li class="detail-item">🏠 улучшенная</li>
+                    </ul>
+                    <p class="card-price" aria-label="Цена: 12 500 000 рублей">12 500 000 ₽</p>
+                    <button class="btn btn-outline" type="button" aria-label="Подробнее: 2-комнатная, 56 м², 12 этаж">Подробнее</button>
+                </div>
+            </article>
+
+            <article class="card" role="listitem">
+                <div class="card-image">
+                    <img src="../images/kvartira3.png"
+                         width="320" height="220"
+                         alt="2-комнатная квартира, 47.5 м², 13 из 24 этаж" loading="lazy">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">2-комнатная</h3>
+                    <ul class="card-details" role="list">
+                        <li class="detail-item">📏 47.5 м²</li>
+                        <li class="detail-item">🏢 13/24 этаж</li>
+                        <li class="detail-item">🏠 просторная</li>
+                    </ul>
+                    <p class="card-price" aria-label="Цена: 11 808 500 рублей">11 808 500 ₽</p>
+                    <button class="btn btn-outline" type="button" aria-label="Подробнее: 2-комнатная, 47.5 м², 13 этаж">Подробнее</button>
+                </div>
+            </article>
+
+            <article class="card" role="listitem">
+                <div class="card-image">
+                    <img src="../images/kvartira4.png"
+                         width="320" height="220"
+                         alt="3-комнатная квартира, 78.9 м², 3 из 25 этаж" loading="lazy">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">3-комнатная</h3>
+                    <ul class="card-details" role="list">
+                        <li class="detail-item">📏 78.9 м²</li>
+                        <li class="detail-item">🏢 3/25 этаж</li>
+                        <li class="detail-item">🏠 панорамная</li>
+                    </ul>
+                    <p class="card-price" aria-label="Цена: 18 445 800 рублей">18 445 800 ₽</p>
+                    <button class="btn btn-outline" type="button" aria-label="Подробнее: 3-комнатная, 78.9 м², 3 этаж">Подробнее</button>
+                </div>
+            </article>
+
+            <article class="card" role="listitem">
+                <div class="card-image">
+                    <img src="../images/kvartira5.png"
+                         width="320" height="220"
+                         alt="Студия, 20.9 м², 14 из 24 этаж" loading="lazy">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Студия</h3>
+                    <ul class="card-details" role="list">
+                        <li class="detail-item">📏 20.9 м²</li>
+                        <li class="detail-item">🏢 14/24 этаж</li>
+                        <li class="detail-item">🏠 отделка</li>
+                    </ul>
+                    <p class="card-price" aria-label="Цена: 6 500 000 рублей">6 500 000 ₽</p>
+                    <button class="btn btn-outline" type="button" aria-label="Подробнее: студия, 20.9 м², 14 этаж">Подробнее</button>
+                </div>
+            </article>
+
+            <article class="card" role="listitem">
+                <div class="card-image">
+                    <img src="../images/kvartira1.png"
+                         width="320" height="220"
+                         alt="1-комнатная квартира, 32.2 м², 20 из 24 этаж" loading="lazy">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">1-комнатная</h3>
+                    <ul class="card-details" role="list">
+                        <li class="detail-item">📏 32.2 м²</li>
+                        <li class="detail-item">🏢 20/24 этаж</li>
+                        <li class="detail-item">🏠 евро</li>
+                    </ul>
+                    <p class="card-price" aria-label="Цена: 8 571 640 рублей">8 571 640 ₽</p>
+                    <button class="btn btn-outline" type="button" aria-label="Подробнее: 1-комнатная, 32.2 м², 20 этаж (повтор)">Подробнее</button>
+                </div>
+            </article>
+        </div>
+
+    </div>
+</main>
+
+<footer class="footer" role="contentinfo">
+    <div class="container">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <p>&copy; 2025 Портфолио студента. Все права защищены.</p>
+            </div>
+            <div class="footer-right">
+                <a href="contacts.html">Контакты</a>
+                <a href="#">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    (function(){
+        const toggle = document.getElementById('filterToggle');
+        const content = document.getElementById('filterContent');
+        if (toggle && content) {
+            content.style.display = 'none';
+            toggle.addEventListener('click', () => {
+                const expanded = toggle.getAttribute('aria-expanded') === 'true';
+                toggle.setAttribute('aria-expanded', String(!expanded));
+                toggle.textContent = expanded ? '🔽 Показать фильтры' : '🔼 Скрыть фильтры';
+                content.style.display = expanded ? 'none' : 'block';
+            });
+        }
+    })();
+</script>
+</body>
+</html>

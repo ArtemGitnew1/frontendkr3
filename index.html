@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Главная - Портфолио</title>
+    <meta name="description" content="Портфолио студента: профиль, навыки, проекты и ссылки на разделы сайта. Адаптивная верстка без фреймворков, внимание к доступности.">
+    <link rel="stylesheet" href="style/styles.css">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --text-color: #0b1020;
+            --text-light: #64748b;
+            --bg-card: #ffffff;
+            --bg-muted: #f8fafc;
+            --border: #e5e7eb;
+            --radius: .9rem;
+            --shadow: 0 6px 18px rgba(0,0,0,.06);
+            --space-sm: .5rem;
+            --space-md: 1rem;
+            --space-lg: 1.25rem;
+            --space-xl: 2rem;
+        }
+
+        /* Доступность */
+        .skip-link {
+            position: absolute;
+            inset-inline-start: 1rem;
+            inset-block-start: -100%;
+            z-index: 1000;
+            padding: .5rem .75rem;
+            background: #111;
+            color: #fff;
+            border-radius: .5rem;
+            text-decoration: none;
+        }
+        .skip-link:focus, .skip-link:focus-visible { inset-block-start: 1rem; }
+        :focus-visible { outline: 3px solid var(--primary-color); outline-offset: 2px; }
+        a, button { outline-offset: 2px; }
+
+        .header {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: #fff;
+            padding-block: 1.25rem;
+        }
+        .header-content {
+            max-width: 72rem;
+            margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+            padding-inline: clamp(1rem, .75rem + 1vw, 2rem);
+        }
+        .header-title { margin: 0; font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2rem); }
+        .header-subtitle { margin: .25rem 0 0; opacity: .9; }
+        .badge { display: inline-block; background: #fff; color: var(--text-color); padding: .4rem .6rem; border-radius: .5rem; font-weight: 600; }
+
+        .nav {
+            position: sticky; top: 0;
+            background: #111827; color: #fff;
+            padding-block: .5rem; box-shadow: 0 1px 3px rgba(0,0,0,.12); z-index: 50;
+        }
+        .nav-container { max-width: 72rem; margin: 0 auto; padding-inline: clamp(1rem, .75rem + 1vw, 2rem); }
+        .nav-list { display: flex; gap: .5rem; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; }
+        .nav-link { display: inline-block; padding: .55rem .85rem; color: #fff; text-decoration: none; border-radius: .5rem; }
+        .nav-link:hover, .nav-link:focus-visible { background: #1f2937; }
+        .nav-link.active, .nav-link[aria-current="page"] { background: var(--primary-color); }
+        .main { padding-block: 1.25rem; }
+        .container { width: 100%; max-width: 72rem; margin: 0 auto; padding-inline: clamp(1rem, .75rem + 1vw, 2rem); }
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+        .card-header { padding: var(--space-lg); border-bottom: 1px solid var(--border); background: var(--bg-muted); }
+        .card-title { margin: 0; font-size: clamp(1.25rem, 1.1rem + .8vw, 1.6rem); color: var(--text-color); display: flex; align-items: center; gap: .5rem; }
+        .card-body { padding: var(--space-lg); }
+        .lead { color: var(--text-color); margin: 0 0 1rem; }
+        .profile {
+            display: grid; gap: 1.25rem; align-items: center;
+            grid-template-columns: auto 1fr;
+        }
+        @media (max-width: 768px) {
+            .profile { grid-template-columns: 1fr; text-align: center; }
+        }
+        .profile-photo {
+            width: 150px; height: 150px; border-radius: 50%; object-fit: cover;
+            border: 4px solid var(--primary-color);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.25);
+        }
+        .skills-container { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1rem 0; }
+        .skill-tag {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: #fff; padding: .4rem .6rem; border-radius: 25px; font-weight: 600; font-size: .875rem;
+            box-shadow: 0 4px 12px rgba(79, 172, 254, 0.3);
+        }
+        .skills-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); }
+        .progress-item { margin-bottom: .25rem; }
+        .progress-label { display: flex; justify-content: space-between; margin-bottom: .35rem; color: var(--text-color); }
+        .progress-bar { height: 8px; background: #e5e7eb; border-radius: 4px; overflow: hidden; }
+        .progress-fill { height: 100%; border-radius: 4px; }
+        .progress-fill.html { width: 90%; background: #2563eb; }
+        .progress-fill.js { width: 75%; background: #16a34a; }
+        .progress-fill.bootstrap { width: 85%; background: #0891b2; }
+        .progress-fill.react { width: 70%; background: #ea580c; }
+        .projects-grid {
+            display: grid; gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+        }
+        .project-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; transition: transform .2s ease, box-shadow .2s ease; }
+        .project-card:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,.12); }
+        .project-image { width: 100%; height: 150px; object-fit: cover; display: block; }
+        .project-content { padding: var(--space-lg); }
+        .project-title { font-size: 1.1rem; margin-bottom: .35rem; color: var(--text-color); }
+        .project-description { color: var(--text-light); margin-bottom: .75rem; line-height: 1.5; }
+        .project-tags { display: flex; flex-wrap: wrap; gap: .4rem; }
+        .project-tag { background: #e2e8f0; color: #475569; padding: .25rem .5rem; border-radius: .5rem; font-size: .875rem; font-weight: 500; }
+        .footer { background: #111827; color: #fff; padding-block: 1rem; margin-top: 1.25rem; }
+        .footer-content { max-width: 72rem; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding-inline: clamp(1rem, .75rem + 1vw, 2rem); }
+        .footer-text { margin: 0; }
+        .footer-links { display: flex; align-items: center; gap: .75rem; }
+        .footer-link { color: #fff; text-decoration: none; }
+        .footer-link:hover, .footer-link:focus-visible { text-decoration: underline; }
+        @media (pointer: coarse) {
+            .btn, .nav-link { min-height: 44px; }
+        }
+        @media (prefers-contrast: more) {
+            :focus-visible { outline: 3px solid #000; }
+            .project-card, .card { box-shadow: none; border-color: #000; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            * { animation: none !important; transition: none !important; }
+        }
+    </style>
+</head>
+<body>
+<a href="#main" class="skip-link">Перейти к основному содержимому</a>
+<header class="header" role="banner">
+    <div class="header-content">
+        <div>
+            <h1 class="header-title">Мой Портфолио</h1>
+            <p class="header-subtitle">Студент разработчик</p>
+        </div>
+        <span class="badge">ЭФБО-03-24</span>
+    </div>
+</header>
+<nav class="nav" aria-label="Основная навигация">
+    <div class="nav-container">
+        <ul class="nav-list" role="list">
+            <li><a href="index.html" class="nav-link active" aria-current="page">🏠 Главная</a></li>
+            <li><a href="pages/news.html" class="nav-link">📰 Новости</a></li>
+            <li><a href="pages/practices.html" class="nav-link">💻 Практики</a></li>
+            <li><a href="pages/goods.html" class="nav-link">🛒 Товары</a></li>
+            <li><a href="pages/contacts.html" class="nav-link">📞 Контакты</a></li>
+            <li><a href="pages/realti.html" class="nav-link">🏢 Недвижимость</a></li>
+        </ul>
+    </div>
+</nav>
+<main id="main" class="main" role="main">
+    <div class="container">
+        <section class="section" aria-labelledby="profile-title">
+            <div class="card">
+                <div class="card-body">
+                    <div class="profile">
+                        <div>
+                            <picture>
+                                <source srcset="images/archit.webp" type="image/webp">
+                                <img src="images/photo.png"
+                                     alt="Фото студента Суринов Артём Сергеевич"
+                                     class="profile-photo"
+                                     width="150" height="150"
+                                     loading="eager">
+                            </picture>
+                        </div>
+                        <div>
+                            <h2 id="profile-title" class="card-title">Суринов Артём Сергеевич</h2>
+                            <p class="text-muted">Студент группы ЭФБО-03-24</p>
+                            <p>Кафедра индустриального программирования, специальность «фуллстек‑разработка».</p>
+                            <div class="skills-container">
+                                <span class="skill-tag">HTML/CSS</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">Accessibility</span>
+                                <span class="skill-tag">React</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skills-grid" aria-label="Прогресс навыков">
+                        <div class="progress-item">
+                            <div class="progress-label"><span>HTML/CSS</span><span>90%</span></div>
+                            <div class="progress-bar">
+                                <div class="progress-fill html" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-label"><span>JavaScript</span><span>75%</span></div>
+                            <div class="progress-bar">
+                                <div class="progress-fill js" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-label"><span>Accessibility</span><span>85%</span></div>
+                            <div class="progress-bar">
+                                <div class="progress-fill bootstrap" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-label"><span>React</span><span>70%</span></div>
+                            <div class="progress-bar">
+                                <div class="progress-fill react" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section" aria-labelledby="about-title">
+            <div class="card">
+                <div class="card-header">
+                    <h3 id="about-title" class="card-title">👤 Обо мне</h3>
+                </div>
+                <div class="card-body">
+                    <p>Я увлекаюсь веб‑разработкой и изучаю современные технологии. В свободное время занимаюсь пет‑проектами и изучаю новые подходы к доступности и адаптивности интерфейсов.</p>
+                    <p>Интересы: фронтенд разработка, UX/UI и мобильная разработка. Стремлюсь к созданию удобных интерфейсов с акцентом на A11y.</p>
+                </div>
+            </div>
+        </section>
+        <section class="section" aria-labelledby="projects-title">
+            <div class="card">
+                <div class="card-header">
+                    <h3 id="projects-title" class="card-title">📁 Мои проекты</h3>
+                </div>
+                <div class="card-body">
+                    <div class="projects-grid">
+                        <article class="project-card">
+                            <img src="images/project1.jpg" alt="Личный сайт — портфолио на HTML и CSS" class="project-image" loading="lazy">
+                            <div class="project-content">
+                                <h4 class="project-title">Личный сайт</h4>
+                                <p class="project-description">Сайт‑портфолио с адаптивным дизайном, без фреймворков.</p>
+                                <div class="project-tags">
+                                    <span class="project-tag">HTML</span>
+                                    <span class="project-tag">CSS</span>
+                                    <span class="project-tag">A11y</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="project-card">
+                            <img src="images/project2.jpg" alt="Туду‑приложение для управления задачами" class="project-image" loading="lazy">
+                            <div class="project-content">
+                                <h4 class="project-title">Туду‑приложение</h4>
+                                <p class="project-description">Простое приложение для управления задачами на JavaScript.</p>
+                                <div class="project-tags">
+                                    <span class="project-tag">JavaScript</span>
+                                    <span class="project-tag">LocalStorage</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="project-card">
+                            <a href="pages/realti.html" style="text-decoration: none; color: inherit;">
+                                <img src="images/title.webp" alt="ЖК Яуза — сайт по продаже недвижимости" class="project-image" loading="lazy">
+                                <div class="project-content">
+                                    <h4 class="project-title">ЖК Яуза</h4>
+                                    <p class="project-description">Сайт по продаже недвижимости, адаптивный и доступный.</p>
+                                    <div class="project-tags">
+                                        <span class="project-tag">HTML/CSS</span>
+                                        <span class="project-tag">A11y</span>
+                                    </div>
+                                    <div style="color: var(--primary-color); margin-top: .35rem;">🔗 Перейти к проекту</div>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+<footer class="footer" role="contentinfo">
+    <div class="footer-content">
+        <p class="footer-text">&copy; 2025 Портфолио студента. Все права защищены.</p>
+        <div class="footer-links">
+            <a href="pages/contacts.html" class="footer-link">Контакты</a>
+            <a href="#" class="footer-link">Политика конфиденциальности</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
