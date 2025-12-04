@@ -2,11 +2,12 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Недвижимость - Портфолио</title>
     <meta name="description" content="ЖК «ЯПарк»: квартиры на набережной Яузы с видом на Сокольники и Лосиный остров. Ипотека, акции, инфраструктура, фотоколлаж и жизнь в комплексе.">
-    <link rel="preload" as="image" href="../images/archit.webp" imagesrcset="../images/archit.webp" imagesizes="100vw">
+
+    <!-- Валидация: указываем ширину кандидата в imagesrcset -->
+    <link rel="preload" as="image" href="../images/archit.webp" imagesrcset="../images/archit.webp 800w" imagesizes="100vw">
 
     <link rel="stylesheet" href="realti.css">
 </head>
@@ -14,7 +15,7 @@
 <a href="#main" class="skip-link">Перейти к основному содержимому</a>
 
 <div class="page">
-    <header class="header bg-primary text-white py-4" role="banner">
+    <header class="header bg-primary text-white py-4">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col col-grow">
@@ -76,7 +77,7 @@
                         <h2 id="hero-title" class="display-6 fw-bold mb-3">ЖК «ЯПарк»</h2>
                         <p class="h5 mb-3 hero-subtitle">Квартира на набережной Яузы с видом на парк Сокольники и Лосиный остров</p>
                         <div class="mb-3">
-                            <span class="badge badge-success fs-6 p-2" aria-label="Дом построен, ключи с октября 2024">Дом построен, ключи с октября 2024</span>
+                            <span class="badge badge-success fs-6 p-2">Дом построен, ключи с октября 2024</span>
                         </div>
                         <ul class="list-unstyled mb-3 fs-6 hero-list">
                             <li class="mb-2">✅ Рядом с метро Преображенская площадь</li>
@@ -108,43 +109,45 @@
                 </div>
             </div>
         </section>
+
         <section class="section py-5" aria-labelledby="collage-title">
             <div class="container">
                 <h2 id="collage-title" class="text-center mb-5">Фотоколлаж</h2>
 
                 <div class="collage" role="list">
-                    <figure class="collage-item item-1" role="listitem">
+                    <figure class="collage-item item-1">
                         <img src="../images/obshvid.webp" alt="Общий вид комплекса" loading="lazy">
                         <figcaption class="visually-hidden">Общий вид комплекса</figcaption>
                     </figure>
 
-                    <figure class="collage-item item-2" role="listitem">
+                    <figure class="collage-item item-2">
                         <img src="../images/fasad.png" alt="Современная архитектура фасадов" loading="lazy">
                         <figcaption class="visually-hidden">Современная архитектура фасадов</figcaption>
                     </figure>
 
-                    <figure class="collage-item item-3" role="listitem">
+                    <figure class="collage-item item-3">
                         <img src="../images/interier.webp" alt="Интерьер квартиры" loading="lazy">
                         <figcaption class="visually-hidden">Интерьер квартиры</figcaption>
                     </figure>
 
-                    <figure class="collage-item item-4" role="listitem">
+                    <figure class="collage-item item-4">
                         <img src="../images/archit.webp" alt="Панорамные виды" loading="lazy">
                         <figcaption class="visually-hidden">Панорамные виды</figcaption>
                     </figure>
 
-                    <figure class="collage-item item-5" role="listitem">
+                    <figure class="collage-item item-5">
                         <img src="../images/dvor.jpeg" alt="Благоустроенный двор" loading="lazy">
                         <figcaption class="visually-hidden">Благоустроенный двор</figcaption>
                     </figure>
 
-                    <figure class="collage-item item-6" role="listitem">
+                    <figure class="collage-item item-6">
                         <img src="../images/besopasnost.png" alt="Безопасность на территории" loading="lazy">
                         <figcaption class="visually-hidden">Безопасность на территории</figcaption>
                     </figure>
                 </div>
             </div>
         </section>
+
         <section class="section py-5 bg-white" aria-labelledby="life-title">
             <div class="container">
                 <h2 id="life-title" class="text-center mb-5">Жизнь в ЖК «ЯПарк»</h2>
@@ -228,53 +231,8 @@
         <section class="section py-5 bg-light" aria-labelledby="advantages-title">
             <div class="container">
                 <h2 id="advantages-title" class="text-center mb-5">Продуманный жилой комплекс</h2>
-                <div class="row space-y-4">
-                    <div class="col col-12 col-lg-4">
-                        <article class="card h-100 border-0" aria-labelledby="loc-title">
-                            <img src="../images/archit.webp"
-                                 alt="Фото локации - вид на набережную"
-                                 class="card-img-top adv-img"
-                                 width="640" height="180"
-                                 loading="lazy">
-                            <div class="card-body text-center">
-                                <div class="icon-xl mb-3" aria-hidden="true">📍</div>
-                                <h3 id="loc-title">Локация</h3>
-                                <p class="text-muted">Исторический район, набережная Яузы, вид на Сокольники.</p>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col col-12 col-lg-4">
-                        <article class="card h-100 border-0" aria-labelledby="safe-title">
-                            <img src="../images/besopasnost.png"
-                                 alt="Фото двора и безопасности"
-                                 class="card-img-top adv-img"
-                                 width="640" height="180"
-                                 loading="lazy">
-                            <div class="card-body text-center">
-                                <div class="icon-xl mb-3" aria-hidden="true">🛡️</div>
-                                <h3 id="safe-title">Безопасность</h3>
-                                <p class="text-muted">Двор без машин, видеонаблюдение, подземный паркинг.</p>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col col-12 col-lg-4">
-                        <article class="card h-100 border-0" aria-labelledby="view2-title">
-                            <img src="../images/vid.jpeg"
-                                 alt="Фото панорамных видов"
-                                 class="card-img-top adv-img"
-                                 width="640" height="180"
-                                 loading="lazy">
-                            <div class="card-body text-center">
-                                <div class="icon-xl mb-3" aria-hidden="true">🔭</div>
-                                <h3 id="view2-title">Виды и архитектура</h3>
-                                <p class="text-muted">Панорамные окна и современное остекление.</p>
-                            </div>
-                        </article>
-                    </div>
-                </div>
             </div>
         </section>
-
 
         <section class="section py-5" aria-labelledby="infrastructure-title">
             <div class="container">
@@ -282,14 +240,14 @@
                 <div class="row space-y-4">
                     <div class="col col-12 col-md-3">
                         <article class="card h-100 infra-card text-center" aria-labelledby="infra-kindergartens-title">
-                            <div class="slider" id="kindergartens-slider" tabindex="0" aria-label="Галерея: 2 детских сада">
+                            <div class="slider" id="kindergartens-slider" tabindex="0">
                                 <div class="slider-track" id="kindergartens-track">
                                     <img src="../images/detsad1.png" alt="Детский сад — вид 1" class="slider-img" width="480" height="180" loading="lazy">
                                     <img src="../images/detsad2.png" alt="Детский сад — вид 2" class="slider-img" width="480" height="180" loading="lazy">
                                 </div>
                                 <button class="slider-btn prev" type="button" aria-label="Предыдущая фотография">&#10094;</button>
                                 <button class="slider-btn next" type="button" aria-label="Следующая фотография">&#10095;</button>
-                                <ul class="slider-dots" aria-label="Переключение фото">
+                                <ul class="slider-dots">
                                     <li><button class="dot" type="button" aria-label="Фото 1"></button></li>
                                     <li><button class="dot" type="button" aria-label="Фото 2"></button></li>
                                 </ul>
@@ -343,7 +301,7 @@
 
     </main>
 
-    <footer class="footer bg-dark text-white py-4" role="contentinfo">
+    <footer class="footer bg-dark text-white py-4">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col col-12 col-md-6">
@@ -359,60 +317,58 @@
 </div>
 
 <script>
-    
-    document.addEventListener('DOMContentLoaded', function () {
-        const toggler = document.querySelector('.navbar-toggler');
-        const collapse = document.querySelector('.navbar-collapse');
-        if (toggler && collapse) {
-            toggler.addEventListener('click', () => {
-                const expanded = toggler.getAttribute('aria-expanded') === 'true';
-                toggler.setAttribute('aria-expanded', String(!expanded));
-                collapse.classList.toggle('open');
-            });
-        }
-    });
-
-    
-    document.addEventListener('DOMContentLoaded', function () {
-        const slider = document.getElementById('kindergartens-slider');
-        if (!slider) return;
-
-        const track = slider.querySelector('.slider-track');
-        const slides = Array.from(slider.querySelectorAll('.slider-img'));
-        const prevBtn = slider.querySelector('.prev');
-        const nextBtn = slider.querySelector('.next');
-        const dots = Array.from(slider.querySelectorAll('.dot'));
-        let index = 0;
-
-        function update() {
-            track.style.transform = `translateX(-${index * 100}%)`;
-            dots.forEach((d, i) => {
-                d.classList.toggle('active', i === index);
-                d.setAttribute('aria-current', i === index ? 'true' : 'false');
-            });
-        }
-
-        prevBtn.addEventListener('click', () => {
-            index = (index - 1 + slides.length) % slides.length;
-            update();
+document.addEventListener('DOMContentLoaded', function () {
+    const toggler = document.querySelector('.navbar-toggler');
+    const collapse = document.querySelector('.navbar-collapse');
+    if (toggler && collapse) {
+        toggler.addEventListener('click', () => {
+            const expanded = toggler.getAttribute('aria-expanded') === 'true';
+            toggler.setAttribute('aria-expanded', String(!expanded));
+            collapse.classList.toggle('open');
         });
+    }
+});
 
-        nextBtn.addEventListener('click', () => {
-            index = (index + 1) % slides.length;
-            update();
-        });
+document.addEventListener('DOMContentLoaded', function () {
+    const slider = document.getElementById('kindergartens-slider');
+    if (!slider) return;
 
+    const track = slider.querySelector('.slider-track');
+    const slides = Array.from(slider.querySelectorAll('.slider-img'));
+    const prevBtn = slider.querySelector('.prev');
+    const nextBtn = slider.querySelector('.next');
+    const dots = Array.from(slider.querySelectorAll('.dot'));
+    let index = 0;
+
+    function update() {
+        track.style.transform = `translateX(-${index * 100}%)`;
         dots.forEach((d, i) => {
-            d.addEventListener('click', () => { index = i; update(); });
+            d.classList.toggle('active', i === index);
+            d.setAttribute('aria-current', i === index ? 'true' : 'false');
         });
+    }
 
-        slider.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') prevBtn.click();
-            if (e.key === 'ArrowRight') nextBtn.click();
-        });
-
+    prevBtn.addEventListener('click', () => {
+        index = (index - 1 + slides.length) % slides.length;
         update();
     });
+
+    nextBtn.addEventListener('click', () => {
+        index = (index + 1) % slides.length;
+        update();
+    });
+
+    dots.forEach((d, i) => {
+        d.addEventListener('click', () => { index = i; update(); });
+    });
+
+    slider.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') prevBtn.click();
+        if (e.key === 'ArrowRight') nextBtn.click();
+    });
+
+    update();
+});
 </script>
 </body>
 </html>
